@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  gulp:
+    container_name: gulp
+    image: fknorre/gulp
+    tty: true
+    command: ./setupAndRunGulp.sh
+    volumes:
+      - ./:/var/www/html
