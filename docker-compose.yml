@@ -3,8 +3,12 @@ version: '3.7'
 services:
   gulp:
     container_name: gulp
-    image: fknorre/gulp
+    image: "fknorre/gulp:latest"
     tty: true
-    command: ./setupAndRunGulp.sh
+    command: ./runGulp.sh
+    environment:
+      FILENAME_CONCAT: 'app.js'
+      FILENAME_MIN: 'app.min.js'
     volumes:
-      - ./:/var/www/html
+     - ./resources/javascript/:/gulp/javascript
+     - ./webroot/js/:/gulp/js
