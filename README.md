@@ -19,8 +19,8 @@ If you want, you can change the names of the compressed files. For this purpose 
       FILENAME_CONCAT: 'app.js' 
       FILENAME_MIN: 'app.min.js' 
     volumes:
-     - ./resources/javascript/:/gulp/javascript # uncompressed
-     - ./webroot/js/:/gulp/js # compressed
+     - ./<your>/<path>/:/gulp/javascript # uncompressed
+     - ./<your>/<path>/:/gulp/js # compressed
 ```
 
 Run the following command, this will spin a container with gulp und run the watch task. 
@@ -32,8 +32,6 @@ docker-compose up -d
 
 ```bash
 docker build --tag fknorre/gulp:latest .
-docker tag gulp:latest fknorre/gulp:latest
-docker push fknorre/gulp:latest
 ```
 
 ## npm packages 
